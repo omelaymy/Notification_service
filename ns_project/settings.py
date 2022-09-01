@@ -138,13 +138,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CELERY_TASK_TIME_LIMIT = 30 * 60
 
 CELERY_BROKER_URL = 'amqp://admin:roiadmin@localhost:15672//'
-CELERY_RESULT_BACKEND = 'django-db'
+result_backend = 'redis://127.0.0.1:16379/0'
 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:16379/0',
+        'LOCATION': 'redis://127.0.0.1:16379/1',
     }
 }
 
-CELERY_CACHE_BACKEND = 'default'
+cache_backend = 'default'
