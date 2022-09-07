@@ -1,6 +1,6 @@
 from rest_framework.decorators import action
 
-from .models import Mailing, Client, Message
+from .models import Tag, Mailing, Client, Message
 from .serializers import TagSerializer, MailingSerializer, ClientSerializer, MessageSerializer
 from rest_framework import viewsets
 

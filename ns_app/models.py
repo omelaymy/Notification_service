@@ -11,6 +11,10 @@ class Tag(models.Model):
     def __str__(self):
         return self.tag
 
+    class Meta:
+        verbose_name = 'Тэг'
+        verbose_name_plural = 'Тэги'
+
 
 class Mailing(models.Model):
     date_start = models.DateTimeField(verbose_name='Дата запуска рассылки')
@@ -43,7 +47,7 @@ class Client(models.Model):
         return super(Client, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f'ID клиента: {self.pk}, номер телефона: {self.phone_number}'
+        return f'ID клиента: {self.pk}, {self.phone_number}, Тэг: {self.tag}'
 
     class Meta:
         verbose_name = 'Клиент'
